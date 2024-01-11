@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { HousingLocation } from '../housinglocation';
 import { HousingService } from '../housing.service';
+import { AddHousesComponent } from '../add-houses/add-houses.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent],
+  imports: [CommonModule, HousingLocationComponent, AddHousesComponent],
   template: `
     <section>
       <form>
@@ -21,6 +22,7 @@ import { HousingService } from '../housing.service';
         [housingLocation]="housingLocation"
       >
       </app-housing-location>
+      <app-add-houses></app-add-houses>
     </section>
   `,
   styleUrl: './home.component.css',

@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-houses',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './add-houses.component.html',
-  styleUrl: './add-houses.component.css'
+  styleUrl: './add-houses.component.css',
 })
-export class AddHousesComponent {
-
-}
+export class AddHousesComponent {}

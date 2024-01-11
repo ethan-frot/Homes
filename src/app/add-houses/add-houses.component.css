@@ -1,0 +1,13 @@
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--accent-color);
+  border-radius: 30px;
+  padding: 150px;
+}
+
+.add-action {
+  all: unset;
+  cursor: pointer;
+}
