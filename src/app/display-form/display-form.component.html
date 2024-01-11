@@ -1,1 +1,48 @@
-<p>display-form works!</p>
+<section class="form">
+  <div class="container">
+    <h1>House form</h1>
+    <form>
+      <div class="mb-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required />
+      </div>
+      <div class="mb-3">
+        <label for="name">City</label>
+        <input type="text" class="form-control" id="city" required />
+      </div>
+      <div class="mb-3">
+        <label for="name">State</label>
+        <input type="text" class="form-control" id="state" required />
+      </div>
+      <div class="mb-3">
+        <label for="name">Available Units</label>
+        <input type="text" class="form-control" id="available-units" required />
+      </div>
+      <div class="mb-3">
+        <label for="name">Wifi</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          required
+        >
+          <option value="2">False</option>
+          <option value="1">True</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="name">Laundry</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          required
+        >
+          <option value="2">False</option>
+          <option value="1">True</option>
+        </select>
+      </div>
+      <button (ngSubmit)="onSubmit()" type="submit" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </div>
+</section>
