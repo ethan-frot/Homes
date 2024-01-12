@@ -59,6 +59,7 @@ button {
   width: 40px;
   height: 40px;
   border-radius: 50px;
+  cursor: pointer;
 }
 .button[data-value="white"] {
   background-color: var(--color-white);
