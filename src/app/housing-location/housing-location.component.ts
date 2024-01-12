@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HousingLocation } from '../housinglocation';
 import { RouterModule } from '@angular/router';
+import { DeleteHousesComponent } from '../delete-houses/delete-houses.component';
 
 @Component({
   selector: 'app-housing-location',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, DeleteHousesComponent],
   template: `
     <section class="listing">
       <img
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
         {{ housingLocation.city }}, {{ housingLocation.state }}
       </p>
       <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
+      <app-delete-houses class="icon"></app-delete-houses>
     </section>
   `,
   styleUrls: ['./housing-location.component.css'],
