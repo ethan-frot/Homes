@@ -4,16 +4,29 @@ import { HousingLocationComponent } from '../housing-location/housing-location.c
 import { HousingLocation } from '../housinglocation';
 import { HousingService } from '../housing.service';
 import { AppComponent } from '../app.component';
+import { AddHousesComponent } from '../add-houses/add-houses.component';
+import { DisplayFormComponent } from '../display-form/display-form.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent, AppComponent],
+  imports: [
+    CommonModule,
+    HousingLocationComponent,
+    AddHousesComponent,
+    DisplayFormComponent, AppComponent
+  ],
   template: `
     <section class="bar">
       <form>
-        <input type="text" placeholder="Filter by city" />
-        <button class="primary" type="button">Search</button>
+        <input type="text" placeholder="Filter by city" #filter />
+        <button
+          class="primary"
+          type="button"
+          (click)="filterResults(filter.value)"
+        >
+          Search
+        </button>
       </form>
       <div class="actions" id="colors">
         <div data-value="light" data-type="color" class="button"></div>
@@ -22,22 +35,35 @@ import { AppComponent } from '../app.component';
     </section>
     <section class="results">
       <app-housing-location
-        *ngFor="let housingLocation of housingLocationList"
+        *ngFor="let housingLocation of filteredLocationList"
         [housingLocation]="housingLocation"
       >
       </app-housing-location>
+      <app-add-houses></app-add-houses>
+      <app-display-form></app-display-form>
     </section>
   `,
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
-
   housingLocationList: HousingLocation[] = [];
   housingService: HousingService = inject(HousingService);
-
+  filteredLocationList: HousingLocation[] = [];
   constructor() {
     this.housingLocationList = this.housingService.getAllHousingLocations();
+    this.filteredLocationList = this.housingLocationList;
+  }
+
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredLocationList = this.housingLocationList;
+      return;
+    }
+
+    this.filteredLocationList = this.housingLocationList.filter(
+      (housingLocation) =>
+        housingLocation?.city.toLowerCase().includes(text.toLowerCase())
+    );
   }
 
   ngOnInit(): void {
