@@ -2,6 +2,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FavoritesComponent } from '../favorites/favorites.component';
 import { DeleteHousesComponent } from '../delete-houses/delete-houses.component';
 
 export interface HousingLocation {
@@ -18,7 +19,7 @@ export interface HousingLocation {
 @Component({
   selector: 'app-housing-location',
   standalone: true,
-  imports: [CommonModule, RouterModule, DeleteHousesComponent],
+  imports: [CommonModule, RouterModule, FavoritesComponent, DeleteHousesComponent],
   template: `
     <section class="listing">
       <img
@@ -26,7 +27,10 @@ export interface HousingLocation {
         [src]="housingLocation.photo"
         alt="Exterior photo of {{ housingLocation.name }}"
       />
-      <h2 class="listing-heading">{{ housingLocation.name }}</h2>
+      <div class="listing-header">
+        <h2 class="listing-heading">{{ housingLocation.name }}</h2>
+        <app-favorites></app-favorites>
+      </div>
       <p class="listing-location">
         {{ housingLocation.city }}, {{ housingLocation.state }}
       </p>

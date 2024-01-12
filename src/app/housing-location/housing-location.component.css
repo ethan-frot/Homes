@@ -3,10 +3,18 @@
   border-radius: 30px;
   padding-bottom: 30px;
 }
+
+.listing-header {
+  display: flex;
+  padding: 10px 20px 0 20px;
+  justify-content: space-between;
+  align-items:flex-start;
+}
+
 .listing-heading {
   color: var(--primary-color);
-  padding: 10px 20px 0 20px;
 }
+
 .listing-photo {
   height: 250px;
   width: 100%;
@@ -15,6 +23,8 @@
 }
 .listing-location {
   padding: 10px 20px 20px 20px;
+  display: flex;
+  align-items: center;
 }
 .listing-location::before {
   content: url("/assets/location-pin.svg") / "";
