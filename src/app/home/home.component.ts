@@ -15,8 +15,8 @@ import { HousingService } from '../housing.service';
         <button class="primary" type="button">Search</button>
       </form>
       <div class="actions" id="colors">
-        <div data-value="white" data-type="color" class="button"></div>
-        <div data-value="black" data-type="color" class="button"></div>
+        <div data-value="light" data-type="color" class="button"></div>
+        <div data-value="dark" data-type="color" class="button"></div>
       </div>
     </section>
     <section class="results">

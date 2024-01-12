@@ -61,10 +61,10 @@ button {
   border-radius: 50px;
   cursor: pointer;
 }
-.button[data-value="white"] {
+.button[data-value="light"] {
   background-color: var(--color-white);
 }
 
-.button[data-value="black"] {
+.button[data-value="dark"] {
   background-color: var(--color-black);
 }
