@@ -39,6 +39,10 @@ li {
   list-style-type: none;
 }
 
+.listing-apply {
+  padding-bottom: 40px;
+}
+
 .listing-apply .section-heading {
   font-size: 18pt;
   margin-bottom: 15px;
