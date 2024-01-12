@@ -1,7 +1,18 @@
+// housing-location.component.ts
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HousingLocation } from '../housinglocation';
 import { RouterModule } from '@angular/router';
+
+export interface HousingLocation {
+  id: number;
+  name: string;
+  city: string;
+  state: string;
+  photo: string;
+  availableUnits: number;
+  wifi: boolean;
+  laundry: boolean;
+}
 
 @Component({
   selector: 'app-housing-location',
