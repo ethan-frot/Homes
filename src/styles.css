@@ -15,10 +15,10 @@ body {
   --light-accent-color: #e8e7fa;
   --light-shadow-color: #e8e8e8;
 
-  --dark-primary-color: #605dc8;
-  --dark-secondary-color: #8b89e6;
-  --dark-accent-color: #e8e7fa;
-  --dark-shadow-color: #e8e8e8;
+  --dark-primary-color: hsl(242, 49%, 23%);
+  --dark-secondary-color: hsl(241, 65%, 63%);
+  --dark-accent-color: hsl(243, 66%, 82%);
+  --dark-shadow-color: hsl(0, 0%, 85%);
 }
 
 button.primary {
