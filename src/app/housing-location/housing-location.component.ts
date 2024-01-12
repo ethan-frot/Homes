@@ -2,6 +2,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { DeleteHousesComponent } from '../delete-houses/delete-houses.component';
 
 export interface HousingLocation {
   id: number;
@@ -17,7 +18,7 @@ export interface HousingLocation {
 @Component({
   selector: 'app-housing-location',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, DeleteHousesComponent],
   template: `
     <section class="listing">
       <img
@@ -30,6 +31,7 @@ export interface HousingLocation {
         {{ housingLocation.city }}, {{ housingLocation.state }}
       </p>
       <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
+      <app-delete-houses class="icon"></app-delete-houses>
     </section>
   `,
   styleUrls: ['./housing-location.component.css'],
