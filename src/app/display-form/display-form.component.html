@@ -1,48 +1,70 @@
 <section class="form">
   <div class="container">
     <h1>House form</h1>
-    <form>
+    <form (submit)="onSubmit($event)" name="housingForm">
       <div class="mb-3">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" required />
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="formData.name"
+          required
+        />
       </div>
       <div class="mb-3">
         <label for="name">City</label>
-        <input type="text" class="form-control" id="city" required />
+        <input
+          type="text"
+          class="form-control"
+          id="city"
+          [(ngModel)]="formData.city"
+          required
+        />
       </div>
       <div class="mb-3">
         <label for="name">State</label>
-        <input type="text" class="form-control" id="state" required />
+        <input
+          type="text"
+          class="form-control"
+          id="state"
+          [(ngModel)]="formData.state"
+          required
+        />
       </div>
       <div class="mb-3">
         <label for="name">Available Units</label>
-        <input type="text" class="form-control" id="available-units" required />
+        <input
+          type="text"
+          class="form-control"
+          id="available-units"
+          [(ngModel)]="formData.availableUnits"
+          required
+        />
       </div>
       <div class="mb-3">
-        <label for="name">Wifi</label>
+        <label for="name" [(ngModel)]="formData.wifi">Wifi</label>
         <select
           class="form-select"
           aria-label="Default select example"
           required
         >
-          <option value="2">False</option>
-          <option value="1">True</option>
+          <option [ngValue]="false">False</option>
+          <option [ngValue]="true">True</option>
         </select>
       </div>
       <div class="mb-3">
-        <label for="name">Laundry</label>
+        <label for="name" [(ngModel)]="formData.laundry">Laundry</label>
         <select
           class="form-select"
           aria-label="Default select example"
           required
         >
-          <option value="2">False</option>
-          <option value="1">True</option>
+          <option [ngValue]="false">False</option>
+          <option [ngValue]="true">True</option>
         </select>
       </div>
-      <button (ngSubmit)="onSubmit()" type="submit" class="btn btn-primary">
-        Submit
-      </button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </section>

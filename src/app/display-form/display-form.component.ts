@@ -1,18 +1,50 @@
 import { Component } from '@angular/core';
-import { AddHousesComponent } from '../add-houses/add-houses.component';
-import { CommonModule } from '@angular/common';
+import { HousingService } from '../housing.service';
+import { RouterModule } from '@angular/router';
+import { HousingLocation } from '../housing-location/housing-location.component';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-display-form',
   standalone: true,
-  imports: [CommonModule, AddHousesComponent],
+  imports: [RouterModule],
+  selector: 'app-display-form',
   templateUrl: './display-form.component.html',
-  styleUrl: './display-form.component.css',
+  styleUrls: ['./display-form.component.css'],
 })
 export class DisplayFormComponent {
-  submitted = false;
+  formData: {
+    name: string;
+    city: string;
+    state: string;
+    availableUnits: number;
+    wifi: boolean;
+    laundry: boolean;
+  } = {
+    name: '',
+    city: '',
+    state: '',
+    availableUnits: 0,
+    wifi: false,
+    laundry: false,
+  };
 
-  onSubmit() {
-    this.submitted = true;
+  constructor(private housingService: HousingService) {}
+
+  onSubmit(event: Event) {
+    event.preventDefault();
+    const newLocation: HousingLocation = {
+      id: this.housingService.getAllHousingLocations().length + 1,
+      name: this.formData.name,
+      city: this.formData.city,
+      state: this.formData.state,
+      photo: 'https://source.unsplash.com/featured/800x600/?apartment',
+      availableUnits: this.formData.availableUnits,
+      wifi: this.formData.wifi,
+      laundry: this.formData.laundry,
+    };
+
+    console.log('New Location Data:', newLocation);
+
+    this.housingService.addHousingLocation(newLocation);
   }
 }
