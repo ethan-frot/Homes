@@ -23,10 +23,9 @@ import { HousingService } from '../housing.service';
     </section>
     <section class="results">
       <app-housing-location
-        *ngFor="let housingLocation of housingLocationList"
+        *ngFor="let housingLocation of filteredLocationList"
         [housingLocation]="housingLocation"
-      >
-      </app-housing-location>
+      ></app-housing-location>
     </section>
   `,
   styleUrl: './home.component.css',
@@ -39,6 +38,7 @@ export class HomeComponent {
     this.housingLocationList = this.housingService.getAllHousingLocations();
     this.filteredLocationList = this.housingLocationList;
   }
+
   filterResults(text: string) {
     if (!text) {
       this.filteredLocationList = this.housingLocationList;

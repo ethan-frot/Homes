@@ -56,9 +56,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
         (mapMousemove)="move($event)"
       >
       </google-map>
-
-      <div>Latitude: {{ display?.lat }}</div>
-      <div>Longitude: {{ display?.lng }}</div>
     </article>
   `,
   styleUrls: ['./details.component.css'],
