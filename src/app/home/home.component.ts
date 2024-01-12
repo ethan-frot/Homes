@@ -9,11 +9,15 @@ import { HousingService } from '../housing.service';
   standalone: true,
   imports: [CommonModule, HousingLocationComponent],
   template: `
-    <section>
+    <section class="bar">
       <form>
         <input type="text" placeholder="Filter by city" />
         <button class="primary" type="button">Search</button>
       </form>
+      <div class="actions" id="colors">
+        <div data-value="white" data-type="color" class="button"></div>
+        <div data-value="black" data-type="color" class="button"></div>
+      </div>
     </section>
     <section class="results">
       <app-housing-location

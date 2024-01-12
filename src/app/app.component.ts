@@ -28,3 +28,33 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'homes';
 }
+// buttons.forEach((btn) => {
+//   btn.addEventListener('click', function () {
+//     const type = btn.dataset.type;
+//     const value = btn.dataset.value;
+//     console.log(type, value);
+//     updateCSS(type, value);
+//   });
+// });
+
+const buttons = document.querySelector('.button') as HTMLElement;
+const header = document.querySelector('header') as HTMLElement;
+
+buttons.addEventListener('click', function () {
+  const type: string | undefined = buttons?.dataset['type'];
+  const value: string | undefined = buttons?.dataset['value'];
+  console.log(type, value);
+  if (type && value) {
+    updateCSS(type, value);
+  }
+});
+
+const updateCSS = (type: string, value: string) => {
+  switch (type) {
+    case 'color':
+      if (header) {
+        header.style.boxShadow = `0px 5px 25px var(--${value}-shadow-color)`;
+      }
+      break;
+  }
+};
