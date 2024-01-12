@@ -2,26 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
 
+It's based on an [official tutorial](https://angular.io/tutorial/first-app) of Angular.
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+First, run `npm install` to install nodes modules.
 
-## Code scaffolding
+Then, run `ng serve --open` for a dev server. The application will automatically reload if you change any of the source files.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Made with ❤️
 
-## Build
+Features not included in the official project have been developed with **[@Daria Karpenko](https://github.com/karpetoryba)**, **[@Cassandra Delmas Marchiset](https://github.com/CassandraDM)** and **[@Lucas Leveque](https://github.com/1u1ucas)**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Mock-up
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Alt text](./src/assets/image.png)
