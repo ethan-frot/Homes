@@ -1,6 +1,11 @@
 <section class="form">
   <div class="container">
-    <h1>House form</h1>
+    <div class="header-container">
+      <h1>House form</h1>
+      <button class="close" (click)="displayNone()">
+        <img src="../../assets/mark.png" alt="mark" />
+      </button>
+    </div>
     <form (submit)="onSubmit($event)" name="housingForm">
       <div class="mb-3">
         <label for="name">Name</label>
