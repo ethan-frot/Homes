@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HousingService } from '../housing.service';
 import { RouterModule } from '@angular/router';
 import { HousingLocation } from '../housing-location/housing-location.component';
-import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   standalone: true,
@@ -30,6 +29,12 @@ export class DisplayFormComponent {
 
   constructor(private housingService: HousingService) {}
 
+  displayNone() {
+    const form = document.querySelector('.form') as HTMLElement;
+
+    form.style.display = 'none';
+  }
+
   onSubmit(event: Event) {
     event.preventDefault();
     const newLocation: HousingLocation = {
@@ -44,6 +49,8 @@ export class DisplayFormComponent {
     };
 
     console.log('New Location Data:', newLocation);
+
+    this.displayNone();
 
     this.housingService.addHousingLocation(newLocation);
   }

@@ -4,64 +4,40 @@
     <form (submit)="onSubmit($event)" name="housingForm">
       <div class="mb-3">
         <label for="name">Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          [(ngModel)]="formData.name"
-          required
-        />
+        <input type="text" class="form-control" id="name" required />
       </div>
       <div class="mb-3">
         <label for="name">City</label>
-        <input
-          type="text"
-          class="form-control"
-          id="city"
-          [(ngModel)]="formData.city"
-          required
-        />
+        <input type="text" class="form-control" id="city" required />
       </div>
       <div class="mb-3">
         <label for="name">State</label>
-        <input
-          type="text"
-          class="form-control"
-          id="state"
-          [(ngModel)]="formData.state"
-          required
-        />
+        <input type="text" class="form-control" id="state" required />
       </div>
       <div class="mb-3">
         <label for="name">Available Units</label>
-        <input
-          type="text"
-          class="form-control"
-          id="available-units"
-          [(ngModel)]="formData.availableUnits"
-          required
-        />
+        <input type="text" class="form-control" id="available-units" required />
       </div>
       <div class="mb-3">
-        <label for="name" [(ngModel)]="formData.wifi">Wifi</label>
+        <label for="name">Wifi</label>
         <select
           class="form-select"
           aria-label="Default select example"
           required
         >
-          <option [ngValue]="false">False</option>
-          <option [ngValue]="true">True</option>
+          <option>False</option>
+          <option>True</option>
         </select>
       </div>
       <div class="mb-3">
-        <label for="name" [(ngModel)]="formData.laundry">Laundry</label>
+        <label for="name">Laundry</label>
         <select
           class="form-select"
           aria-label="Default select example"
           required
         >
-          <option [ngValue]="false">False</option>
-          <option [ngValue]="true">True</option>
+          <option>False</option>
+          <option>True</option>
         </select>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
