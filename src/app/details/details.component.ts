@@ -4,10 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { HousingService } from '../housing.service';
 import { HousingLocation } from '../housinglocation';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
+import { GoogleMapsModule } from '@angular/google-maps';
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, GoogleMapsModule],
   template: `
     <article>
       <img
@@ -45,6 +47,15 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
           <button type="submit" class="primary">Apply now</button>
         </form>
       </section>
+      <google-map
+        height="500px"
+        width="100%"
+        [center]="center"
+        [zoom]="zoom"
+        (mapClick)="moveMap($event)"
+        (mapMousemove)="move($event)"
+      >
+      </google-map>
     </article>
   `,
   styleUrls: ['./details.component.css'],
@@ -70,5 +81,32 @@ export class DetailsComponent {
       this.applyForm.value.lastName ?? '',
       this.applyForm.value.email ?? ''
     );
+  }
+
+  ngOnInit(): void {}
+
+  display: any;
+  center: google.maps.LatLngLiteral = {
+    lat: 40,
+    lng: -100,
+  };
+  zoom = 4;
+
+  /*------------------------------------------
+    --------------------------------------------
+    moveMap()
+    --------------------------------------------
+    --------------------------------------------*/
+  moveMap(event: google.maps.MapMouseEvent) {
+    if (event.latLng != null) this.center = event.latLng.toJSON();
+  }
+
+  /*------------------------------------------
+    --------------------------------------------
+    move()
+    --------------------------------------------
+    --------------------------------------------*/
+  move(event: google.maps.MapMouseEvent) {
+    if (event.latLng != null) this.display = event.latLng.toJSON();
   }
 }
