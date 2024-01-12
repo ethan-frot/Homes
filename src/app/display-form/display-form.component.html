@@ -1,0 +1,51 @@
+<section class="form">
+  <div class="container">
+    <div class="header-container">
+      <h1>House form</h1>
+      <button class="close" (click)="displayNone()">
+        <img src="../../assets/mark.png" alt="mark" />
+      </button>
+    </div>
+    <form (submit)="onSubmit($event)" name="housingForm">
+      <div class="mb-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required />
+      </div>
+      <div class="mb-3">
+        <label for="name">City</label>
+        <input type="text" class="form-control" id="city" required />
+      </div>
+      <div class="mb-3">
+        <label for="name">State</label>
+        <input type="text" class="form-control" id="state" required />
+      </div>
+      <div class="mb-3">
+        <label for="name">Available Units</label>
+        <input type="text" class="form-control" id="available-units" required />
+      </div>
+      <div class="mb-3">
+        <label for="name">Wifi</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          required
+        >
+          <option>False</option>
+          <option>True</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="name">Laundry</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          required
+        >
+          <option>False</option>
+          <option>True</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</section>

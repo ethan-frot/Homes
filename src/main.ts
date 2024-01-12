@@ -5,6 +5,7 @@ import {
 import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import routeConfig from './app/routes';
+import { FormsModule } from '@angular/forms';
 
 bootstrapApplication(AppComponent, {
   providers: [provideProtractorTestingSupport(), provideRouter(routeConfig)],

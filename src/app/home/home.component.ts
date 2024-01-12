@@ -3,11 +3,18 @@ import { CommonModule } from '@angular/common';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { HousingLocation } from '../housinglocation';
 import { HousingService } from '../housing.service';
+import { AddHousesComponent } from '../add-houses/add-houses.component';
+import { DisplayFormComponent } from '../display-form/display-form.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent],
+  imports: [
+    CommonModule,
+    HousingLocationComponent,
+    AddHousesComponent,
+    DisplayFormComponent,
+  ],
   template: `
     <section>
       <form>
@@ -25,7 +32,10 @@ import { HousingService } from '../housing.service';
       <app-housing-location
         *ngFor="let housingLocation of filteredLocationList"
         [housingLocation]="housingLocation"
-      ></app-housing-location>
+      >
+      </app-housing-location>
+      <app-add-houses></app-add-houses>
+      <app-display-form></app-display-form>
     </section>
   `,
   styleUrl: './home.component.css',
