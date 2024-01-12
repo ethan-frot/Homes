@@ -7,16 +7,26 @@ body {
   font-family: "Be Vietnam Pro", sans-serif;
 }
 :root {
-  --primary-color: #605dc8;
-  --secondary-color: #8b89e6;
-  --accent-color: #e8e7fa;
-  --shadow-color: #e8e8e8;
+  --color-white: white;
+  --color-black: black;
+
+  --light-primary-color: #605dc8;
+  --light-secondary-color: #8b89e6;
+  --light-accent-color: #e8e7fa;
+  --light-shadow-color: #e8e8e8;
+  --light-background-color: white;
+
+  --dark-primary-color: hsl(242, 49%, 23%);
+  --dark-secondary-color: hsl(241, 65%, 63%);
+  --dark-accent-color: hsl(243, 66%, 82%);
+  --dark-shadow-color: hsl(243, 66%, 82%);
+  --dark-background-color: hsl(242, 49%, 8%);
 }
 
 button.primary {
   padding: 10px;
-  border: solid 1px var(--primary-color);
-  background: var(--primary-color);
+  border: solid 1px var(--light-primary-color);
+  background: var(--light-primary-color);
   color: white;
   border-radius: 8px;
 }

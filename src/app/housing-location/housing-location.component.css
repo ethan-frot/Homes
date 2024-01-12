@@ -1,5 +1,5 @@
 .listing {
-  background: var(--accent-color);
+  background: var(--light-accent-color);
   border-radius: 30px;
   padding-bottom: 30px;
 }
@@ -12,7 +12,8 @@
 }
 
 .listing-heading {
-  color: var(--primary-color);
+  color: var(--light-primary-color);
+  padding: 10px 20px 0 20px;
 }
 
 .listing-photo {
@@ -33,7 +34,7 @@
 section.listing a {
   padding-left: 20px;
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--light-primary-color);
 }
 section.listing a::after {
   content: "\203A";
