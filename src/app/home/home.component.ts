@@ -14,7 +14,8 @@ import { DisplayFormComponent } from '../display-form/display-form.component';
     CommonModule,
     HousingLocationComponent,
     AddHousesComponent,
-    DisplayFormComponent, AppComponent
+    DisplayFormComponent,
+    AppComponent,
   ],
   template: `
     <section class="bar">
@@ -72,17 +73,11 @@ export class HomeComponent {
 
   private setupButtonClickListeners(): void {
     const buttons = document.querySelectorAll('.button');
-    console.log(buttons, 'hello');
-
-    if (buttons.length === 0) {
-      console.warn('No buttons with class "button" found.');
-    }
 
     buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
         const type: string | null = btn?.getAttribute('data-type');
         const value: string | null = btn?.getAttribute('data-value');
-        console.log(type, value);
         if (type && value) {
           this.updateCSS(type, value);
         }

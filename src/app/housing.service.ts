@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HousingLocation } from './housinglocation';
-import { AddHousesComponent } from './add-houses/add-houses.component';
 
 @Injectable({
   providedIn: 'root',

@@ -46,12 +46,14 @@ export class DisplayFormComponent {
       availableUnits: this.formData.availableUnits,
       wifi: this.formData.wifi,
       laundry: this.formData.laundry,
+      // lat: 22.334,
+      // lng: 45.4313,
     };
 
     console.log('New Location Data:', newLocation);
 
     this.displayNone();
 
-    this.housingService.addHousingLocation(newLocation);
+    // this.housingService.addHousingLocation(newLocation);
   }
 }
